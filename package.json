@@ -1,0 +1,29 @@
+{
+  "name": "lambda-telegram-bots",
+  "version": "0.1.0",
+  "description": "Library to build and run Telegram bots in AWS Lambda platform",
+  "main": "handler.js",
+  "scripts": {
+  },
+  "keywords": [
+    "lambda",
+    "telegram",
+    "bot",
+    "aws",
+    "webhook",
+    "api"
+  ],
+  "author": "iuri aranda <iuri.aranda@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "startbot": "bin/start.js"
+  },
+  "devDependencies": {
+    "yargs": "3.32.0",
+    "node-telegram-bot-api": "0.19.2"
+  },
+  "dependencies": {
+    "yargs": "3.32.0",
+    "node-telegram-bot-api": "0.19.2"
+  }
+}
