@@ -9,8 +9,8 @@ module.exports = function (handlers) {
       handlers.onMessage(event.message, cb);
     } else if (event.inline_query && typeof(handlers.onInlineQuery) === 'function') {
       handlers.onInlineQuery(event.inline_query, cb);
-    } else if (event.choosen_inline_result && typeof(handlers.onChoosenInlineResult) === 'function') {
-      handlers.onChoosenInlineResult(event.choosen_inline_result, cb);
+    } else if (event.chosen_inline_result && typeof(handlers.onChosenInlineResult) === 'function') {
+      handlers.onChosenInlineResult(event.chosen_inline_result, cb);
     } else {
       cb();
     }

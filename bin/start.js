@@ -44,9 +44,9 @@ bot.on('inline_query', function (msg) {
   }, context);
 });
 
-bot.on('choosen_inline_result', function (msg) {
+bot.on('chosen_inline_result', function (msg) {
   handler({
     update_id: '233456345', // Useless
-    choosen_inline_result: msg
+    chosen_inline_result: msg
   });
 });
