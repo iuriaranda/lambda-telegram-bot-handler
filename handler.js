@@ -5,7 +5,19 @@ module.exports = function (handlers) {
       else      context.succeed(result);
     };
 
-    if (event.message && typeof(handlers.onMessage) === 'function') {
+    if (event.message) {
+      if (event.message.text && handlers.onText) {
+        var result;
+        for (var h in handlers.onText) {
+          result = handlers.onText[h].matches.exec(event.message.text);
+          if (result) {
+            handlers.onText[h].handler(event.message, result, cb);
+            return;
+          }
+        }
+      }
+
+      // Fallback to the generic message handler
       handlers.onMessage(event.message, cb);
     } else if (event.inline_query && typeof(handlers.onInlineQuery) === 'function') {
       handlers.onInlineQuery(event.inline_query, cb);
