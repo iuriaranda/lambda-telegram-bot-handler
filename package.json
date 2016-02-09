@@ -1,5 +1,5 @@
 {
-  "name": "lambda-telegram-bots",
+  "name": "lambda-telegram-bot-handler",
   "version": "0.1.0",
   "description": "Library to build and run Telegram bots in AWS Lambda platform",
   "main": "handler.js",
