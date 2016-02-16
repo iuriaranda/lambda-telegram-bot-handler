@@ -72,3 +72,7 @@ To run a bot on AWS Lambda you just need 3 things:
 - A Lambda function with your bot's code (I use Grunt and [grunt-aws-lambda](https://github.com/Tim-B/grunt-aws-lambda) to deploy code easily)
 - An API gateway POST endpoint attached to your Lambda function
 - A Telegram bot with its webhook configured to point to your API gateway endpoint (it'll look something like `https://123456abc.execute-api.eu-west-1.amazonaws.com/prod/`)
+
+## License
+
+MIT
