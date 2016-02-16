@@ -37,7 +37,7 @@ exports.handler = telegramHandler({
 
 `exports.handler` is the handler you specify in your Lambda function configuration. So it's the method that will be called on each Lambda invocation.
 
-Only one handler function will be called for each message, so `onText` handlers take precedence over `onMessage`, and among `onText` handlers, the first that matches the message text (in declaration order) will be called.
+Only one message handler function will be called for each invocation, so `onText` handlers take precedence over `onMessage`, and among `onText` handlers, the first that matches the message text (in declaration order) will be called.
 In the example above, if a user sends the message `/pattern`, the first handler in the `onText` array will be called. If the user sends `/pattern2 hello`, the second handler will be called. And finally if the user sends `/no_match`, the `onMessage` handler will be called.
 
 ## Reference
@@ -66,3 +66,9 @@ These are your defined functions to handle Telegram messages. They receive the f
 - `matches`: the result of executing regexp.exec on the message text. Will only be present for `onText` handlers as they run against a regexp.
 
 ## Setup
+
+To run a bot on AWS Lambda you just need 3 things:
+
+- A Lambda function with your bot's code (I use Grunt and [grunt-aws-lambda](https://github.com/Tim-B/grunt-aws-lambda) to deploy code easily)
+- An API gateway POST endpoint attached to your Lambda function
+- A Telegram bot with its webhook configured to point to your API gateway endpoint (it'll look something like `https://123456abc.execute-api.eu-west-1.amazonaws.com/prod/`)
