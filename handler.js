@@ -17,6 +17,11 @@ module.exports = function (handlers) {
         }
       }
 
+      if (event.message.location && handlers.onLocation) {
+        handlers.onLocation(event.message, cb);
+        return;
+      }
+
       // Fallback to the generic message handler
       handlers.onMessage(event.message, cb);
     } else if (event.inline_query && typeof(handlers.onInlineQuery) === 'function') {

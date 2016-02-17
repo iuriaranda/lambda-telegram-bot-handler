@@ -53,6 +53,7 @@ Returns a Lambda handler function: `function (event, context) { ... }`
 - `onText` (array of objects - optional): array of text message handlers. Handlers defined in this array will only process text messages (see https://core.telegram.org/bots/api#message) that match the defined regex. They are defined as an object with the following attributes:
   - `matches` (regex - mandatory): the regular expression that the message has to match
   - `handler` (function - mandatory): the actual message handler
+- `onLocation` (function - optional): location message handler.
 - `onMessage` (function - optional): fallback message handler. This function will be called for each message received that hasn't been handled by any other defined handlers.
 - `onInlineQuery` (function - optional): handler for inline queries (https://core.telegram.org/bots/api#inlinequery)
 - `onChosenInlineResult` (function - optional): handler for choosen inline query results (https://core.telegram.org/bots/api#choseninlineresult)
