@@ -11,7 +11,7 @@ module.exports = function (handlers) {
         for (var h in handlers.onText) {
           result = handlers.onText[h].matches.exec(event.message.text);
           if (result) {
-            handlers.onText[h].handler(event.message, result, cb);
+            handlers.onText[h].handler(event.message, cb, result);
             return;
           }
         }
